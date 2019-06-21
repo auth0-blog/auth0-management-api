@@ -41,9 +41,9 @@ module.exports = (function () {
             .then(data => data.access_token)
             .then(token => {
                 const managementClient = new ManagementClient({
-                    domain: `${process.env.CLIENT_DOMAIN}.auth0.com`,
+                    domain: `${process.env.CLIENT_DOMAIN}`,
                     token,
-                    audience: `https://${process.env.CLIENT_DOMAIN}.auth0.com/api/v2/`
+                    audience: `https://${process.env.CLIENT_DOMAIN}/api/v2/`
                 });
 
                 // set it so we can use it in our other methods
@@ -63,7 +63,7 @@ module.exports = (function () {
         // get the info we need
         const clientId = process.env.CLIENT_ID;
         const clientSecret = process.env.CLIENT_SECRET;
-        const url = `https://${process.env.CLIENT_DOMAIN}.auth0.com/oauth/token`;
+        const url = `https://${process.env.CLIENT_DOMAIN}/oauth/token`;
 
         // make the call to the api via POST
         return axios
@@ -71,7 +71,7 @@ module.exports = (function () {
                 client_id: clientId,
                 client_secret: clientSecret,
                 grant_type: 'client_credentials',
-                audience: `https://${process.env.CLIENT_DOMAIN}.auth0.com/api/v2/`
+                audience: `https://${process.env.CLIENT_DOMAIN}/api/v2/`
             })
             .then(res => res.data)
             .catch(err => err);

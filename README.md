@@ -3,11 +3,10 @@ The module to interact with the Auth0Management API
 ## To run this:
 
 1. Clone the repo: `git clone https://github.com/auth0-blog/auth0-management-api.git`
-2. Add credentials to a new `.env` file
-3. Install nodemon: `npm i -g nodemon`
-4. Install axios and auth0: `npm install --save axios auth0`
-5. Run the server: `node server.js` or `nodemon server.js`
-6. Visit the app and see your client info: [http://localhost:8080](http://localhost:8080)
+2. Add Auth0 credentials to a new `.env` file.
+3. Run `npm install` to install the dependencies.
+3. Run files with the command `node get-client.js` and `node update-client.js`.
+4. See changes in newly created file, `update-client.js`.
 
 ## Requirements:
 

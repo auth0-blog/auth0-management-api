@@ -65,7 +65,7 @@ module.exports = (function () {
         const clientSecret = process.env.CLIENT_SECRET;
         const url = `https://${process.env.CLIENT_DOMAIN}/oauth/token`;
 
-        // make the call to the api via POST
+        // make the call to the API via POST
         return axios
             .post(url, {
                 client_id: clientId,

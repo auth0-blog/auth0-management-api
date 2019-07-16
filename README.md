@@ -6,7 +6,7 @@ The module to interact with the Auth0Management API
 2. Add Auth0 credentials to a new `.env` file.
 3. Run `npm install` to install the dependencies.
 3. Run files with the command `node get-client.js` and `node update-client.js`.
-4. See changes in newly created file, `update-client.js`.
+4. See changes in newly created file, `client-data.json`.
 
 ## Requirements:
 

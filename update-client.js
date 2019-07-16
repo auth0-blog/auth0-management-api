@@ -1,15 +1,23 @@
 require('dotenv').config();
 const Auth0Manager = require('./Auth0Manager');
+var fs = require('file-system');
 
 // the new data we want to set
-// we should get this from a different source like a development client
-const random = Math.floor(Math.random() * -1000) + 1000;
-const newData = { name: `management-api-test ${random}` };
+let newData = fs.readFileSync('./client-data.json', 'utf8', function (err, data) {
+    if (err) {
+        throw err;
+    }
+    return data;
+});
+newData = JSON.parse(newData)
+const updatedData = { name: `${newData.name}` };
 
 Auth0Manager.init()
-    .then(() => Auth0Manager.updateClient(newData))
+    .then(() => {
+        return Auth0Manager.updateClient(updatedData)
+    })
     .then(updatedClient => {
-        console.log(updatedClient);
+        console.log(updatedClient)
         return updatedClient;
     })
     .catch(err => ({ message: 'There was an error!', ...err }));

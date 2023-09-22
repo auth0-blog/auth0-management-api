@@ -18,7 +18,7 @@ The module to interact with the Auth0Management API
 1.  Requests an access token using client_id and client_secret
 2.  Uses the access token to create a new ManagementClient
 3.  Use the ManagementClient to interact with the API:
-    https://auth0.github.io/node-auth0/module-management.ManagementClient.html
+    https://auth0.github.io/node-auth0/index.html
 
 ## Example usage to get a client:
 
